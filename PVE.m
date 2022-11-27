@@ -3,8 +3,6 @@ board = zeros(10);
 O_win = 0; X_win = 0;
 for round = 1:100
     show_board(board);
-%     O = find(board == 1);
-%     X = find(board == 2);
 
     [X_win, O_win] = winner(board, X_win, O_win);
     

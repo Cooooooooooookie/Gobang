@@ -11,10 +11,10 @@ function [X_win, O_win] = winner(board, X_win, O_win)
             elseif length(find(board(j:j+4,i) == 1)) == 5
                 O_win = 1;
                 % left slash
-            elseif i < 7 && length(find(diag(board(i:i+4,j:j+4)) == 1)) == 5
+            elseif i < side_length(1) - 4 && length(find(diag(board(i:i+4,j:j+4)) == 1)) == 5
                 O_win = 1;
                 % right slash
-            elseif i < 7 && length(find(diag(fliplr(board(i:i+4,j:j+4))) == 1)) == 5
+            elseif i < side_length(1) - 4 && length(find(diag(fliplr(board(i:i+4,j:j+4))) == 1)) == 5
                 O_win = 1;
                 % row
             elseif length(find(board(i,j:j+4) == 2)) == 5
@@ -23,10 +23,10 @@ function [X_win, O_win] = winner(board, X_win, O_win)
             elseif length(find(board(j:j+4,i) == 2)) == 5
                 X_win = 1;
                 % left slash
-            elseif i < 7 && length(find(diag(board(i:i+4,j:j+4)) == 2)) == 5
+            elseif i < side_length(1) - 4 && length(find(diag(board(i:i+4,j:j+4)) == 2)) == 5
                 X_win = 1;
                 % right slash
-            elseif i < 7 && length(find(diag(fliplr(board(i:i+4,j:j+4))) == 2)) == 5
+            elseif i < side_length(1) - 4 && length(find(diag(fliplr(board(i:i+4,j:j+4))) == 2)) == 5
                 X_win = 1;
             end
         end

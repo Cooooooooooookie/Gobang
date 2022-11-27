@@ -1,5 +1,5 @@
 clear; clc;
-m = 10;
+m = 19;
 board = zeros(m);
 O_win = 0; X_win = 0;
 for round = 1:m^2
@@ -17,10 +17,10 @@ for round = 1:m^2
 
     if mod(round, 2) == 1
         x = input('O Round\n','s');
-        while str2num(x(2:3)) > 10 || double(x(1)-96) > 10 || board(11-str2num(x(2:3)),double(x(1))-96) == 1 || board(11-str2num(x(2:3)),double(x(1))-96) == 2
+        while str2num(x(2:3)) > m || double(x(1)-96) > m || board(m + 1 -str2num(x(2:3)),double(x(1))-96) == 1 || board(m + 1 -str2num(x(2:3)),double(x(1))-96) == 2
             x = input('O Round\n','s');
         end
-        board(11-str2num(x(2:3)),double(x(1))-96) = 1; 
+        board(m + 1 - str2num(x(2:3)),double(x(1))-96) = 1; 
     else
         [row, column] = AnnieGo(board);
         board(row, column) = 2;

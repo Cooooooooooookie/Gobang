@@ -1,7 +1,9 @@
 % winner deciding
 function [X_win, O_win] = winner(board, X_win, O_win)
-    for i = 1:10
-        for j = 1:6
+    side_length = size(board);
+    
+    for i = 1:side_length(1)
+        for j = 1:side_length(1)-4
             % row
             if length(find(board(i,j:j+4) == 1)) == 5
                 O_win = 1;

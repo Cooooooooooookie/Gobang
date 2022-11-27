@@ -1,7 +1,13 @@
 function x = show_board(board)
 
     clc;
-    fprintf('     a   b   c   d   e   f   g   h   i   j\n   -----------------------------------------\n')
+    fprintf('  ');
+    side_length = size(board);
+    for i = 97:96 + side_length(1)
+        fprintf('   %s',i);
+    end
+    fprintf('\n   -----------------------------------------\n');
+    
     for i=1:10
         fprintf('%02s |',num2str(11-i));
         for j=1:10

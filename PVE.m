@@ -1,7 +1,8 @@
 clear; clc;
-board = zeros(10);
+m = 10;
+board = zeros(m);
 O_win = 0; X_win = 0;
-for round = 1:100
+for round = 1:m^2
     show_board(board);
 
     [X_win, O_win] = winner(board, X_win, O_win);

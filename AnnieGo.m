@@ -3,7 +3,7 @@ function [go_row, go_column] = AnnieGo(board)
     
     weight = 5;
     o_weight = 1;
-    x_weight = 1;
+    x_weight = 1.1;
     
     score = zeros(10);
     

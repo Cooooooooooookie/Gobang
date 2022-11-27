@@ -6,11 +6,14 @@ function x = show_board(board)
     for i = 97:96 + side_length(1)
         fprintf('   %s',i);
     end
-    fprintf('\n   -----------------------------------------\n');
-    
-    for i=1:10
-        fprintf('%02s |',num2str(11-i));
-        for j=1:10
+    fprintf('\n   ');
+    for i = 1:side_length(1)
+        fprintf('----');
+    end
+    fprintf('-\n')
+    for i = 1:side_length(1)
+        fprintf('%02s |',num2str(side_length(1)+1-i));
+        for j=1:side_length(1)
             if board(i,j) == 0
                 fprintf('   |');
             elseif board(i,j) == 1
@@ -19,7 +22,10 @@ function x = show_board(board)
                 fprintf(' X |');
             end
         end
-        fprintf('\n');
-        fprintf('   -----------------------------------------\n')
+        fprintf('\n   ');        
+        for i = 1:side_length(1)
+        fprintf('----')   
+    end
+    fprintf('-\n')
     end
 end

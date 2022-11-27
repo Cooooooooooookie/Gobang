@@ -1,7 +1,7 @@
 
 function [go_row, go_column] = AnnieGo(board)
     
-    % AnnieGo is a auto gobang function.
+    % AnnieGo is an auto gobang function.
     % Calculate the score of each position, and return the best placement.
     %
     % Please call AnnieGo(board), the input value is a nxn matrix,

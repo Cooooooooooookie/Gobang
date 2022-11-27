@@ -1,7 +1,7 @@
 
 function [go_row, go_column] = AnnieGo(board)
     
-    weight = 4;
+    weight = 5;
     o_weight = 1;
     x_weight = 1;
     

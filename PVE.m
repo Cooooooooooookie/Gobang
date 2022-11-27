@@ -1,5 +1,5 @@
 clear; clc;
-m = 15;
+m = 10;
 board = zeros(m);
 O_win = 0; X_win = 0;
 for round = 1:m^2

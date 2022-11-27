@@ -5,10 +5,11 @@ function [go_row, go_column] = AnnieGo(board)
     o_weight = 1;
     x_weight = 1.1;
     
-    score = zeros(10);
+    side_length = size(board);
+    score = zeros(side_length(1));
     
-    for i = 1:6
-        for j = 1:10
+    for i = 1:side_length(1) - 4
+        for j = 1:side_length(1)
             %\\\ Horizontal_line ///%
             o_num = length(find(board(j,i:i+4) == 1));
             x_num = length(find(board(j,i:i+4) == 2));
@@ -24,7 +25,7 @@ function [go_row, go_column] = AnnieGo(board)
             end
         end
         
-        for j = 1:6
+        for j = 1:side_length(1) - 4
             %\\\ Left_slash ///%
             o_num = length(find(diag(board(i:i+4,j:j+4)) == 1));
             x_num = length(find(diag(board(i:i+4,j:j+4)) == 2));
@@ -49,5 +50,5 @@ function [go_row, go_column] = AnnieGo(board)
     score(find(board)) = 0;
     
     max_point = find(score == max(max(score))) - 1;
-    go_row = mod(max_point(1), 10) + 1;
-    go_column = fix(max_point(1) / 10) + 1;
+    go_row = mod(max_point(1), side_length(1)) + 1;
+    go_column = fix(max_point(1) / side_length(1)) + 1;

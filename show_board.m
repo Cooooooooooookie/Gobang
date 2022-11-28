@@ -1,6 +1,7 @@
 function x = show_board(board)
 
     clc;
+    
     fprintf('  ');
     [side_length, ~] = size(board);
     for i = 97:96 + side_length

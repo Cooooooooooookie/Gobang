@@ -1,5 +1,5 @@
 function x = show_board(board)
-
+%
     clc;
     fprintf('  ');
     [side_length, ~] = size(board);

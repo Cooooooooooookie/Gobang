@@ -15,7 +15,7 @@ function [go_row, go_column] = AnnieGo(board)
     % Mechanical Engineering Dept, Chang Gung University.
     
     %=========================% Parameter %=========================%
-        weight   = 5.0;     % The power of the number of pieces +1.
+        weight   = 5.0;      % The power of the number of pieces +1.
         ox_ratio = 1.05;     % Ratio = O / X.
     %===============================================================%
     

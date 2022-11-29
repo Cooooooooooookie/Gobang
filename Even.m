@@ -1,7 +1,7 @@
 % even condition
 function Even(board)
 
-[side_length, ~] = size(board);
+    [side_length, ~] = size(board);
     
     for i = 1:side_length
         for j = 1:side_length-4

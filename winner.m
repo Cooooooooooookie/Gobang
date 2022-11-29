@@ -1,7 +1,7 @@
 % winner deciding
 function [X_win, O_win] = winner(board, X_win, O_win)
     [side_length, ~] = size(board);
-   % 
+   
     for i = 1:side_length
         for j = 1:side_length-4
             % row

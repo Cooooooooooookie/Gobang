@@ -3,7 +3,7 @@ function win_or_even(board, x, m)
     row = str2num(x(2:3));
     column = double(x(1)-96);
     total_line = m * (m - 4) * 2 + (m - 4)^2 * 2;
-    
+    % row boundary decide
     if row - 4 <= 0
         i_left = 1;
     else
@@ -14,7 +14,7 @@ function win_or_even(board, x, m)
     else
         i_right = row;
     end
-        
+    % column boundary decide    
     if column - 4 <= 0
         j_left = 1;
     else
@@ -24,8 +24,7 @@ function win_or_even(board, x, m)
         j_right = 6;
     else
         j_right = row;
-    end
-    
+    end    
     % row check
     for i = i_left:i_right
         o_num = length(find(board(i : i + 4, column) == 1));
@@ -37,8 +36,7 @@ function win_or_even(board, x, m)
         elseif i == row - 2 && o_num ~= 0 && x_num ~= 0
             total_line = total_line - 1;
         end
-    end
-    
+    end    
     % column 
     for j = j_left:j_right
         o_num = length(find(board(row, column : column + 4) == 1));
@@ -50,8 +48,7 @@ function win_or_even(board, x, m)
         elseif j == column - 2 && o_num ~= 0 && x_num ~= 0
             total_line = total_line - 1;
         end
-    end
-    
+    end    
     % slash component
     for i = i_left:i_right
         for j = j_left:j_right
@@ -64,8 +61,7 @@ function win_or_even(board, x, m)
                 fprintf('X win!');
             elseif i == row - 2 && j == column - 2 && o_num ~= 0 && x_num ~= 0
                 total_line = total_line - 1;
-            end
-            
+            end           
             % right slash
             o_num = length(find(fliplr(board(row : row + 4, column : column + 4)) == 1));
             x_num = length(find(fliplr(board(row : row + 4, column : column + 4)) == 2));
@@ -77,8 +73,7 @@ function win_or_even(board, x, m)
                 total_line = total_line - 1;
             end            
         end
-    end
-    
+    end  
     % even
     if total_line == 0
         fprintf('Even!');

@@ -54,7 +54,7 @@ function ox_ratio = ox_ratio_deciding(board)
     o_sum = sum(score_o,'all');
     x_sum = sum(score_x,'all');
     ox_ration = o_sum / x_sum;
-    if ox_ratio < 1
+    if ox_ratio > 1
         ox_ratio = 0.95;
     else
         ox_ratio = 1.08;

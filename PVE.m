@@ -8,8 +8,7 @@ column = 1;
 for round = 1:m^2
     
     show_board(board);
-    
-    [X_win, O_win] = winner(board, X_win, O_win);   
+    [O_win, X_win] = win_or_even(board, row, column, m);
     if O_win == 1
         fprintf('O win!\n');
         break
@@ -17,7 +16,7 @@ for round = 1:m^2
         fprintf('X win!\n');
         break
     end
-  
+    
     if mod(round, 2) == 1
         x = input('O Round\n','s');
         re = 'return';
@@ -31,11 +30,15 @@ for round = 1:m^2
         while str2num(x(2:3)) > m || double(x(1)-96) > m || board(m + 1 -str2num(x(2:3)),double(x(1))-96) == 1 || board(m + 1 -str2num(x(2:3)),double(x(1))-96) == 2
             x = input('O Round\n','s');
         end
-            x_return = x;
-            board(m + 1 - str2num(x(2:3)),double(x(1))-96) = 1;             
+        x_return = x;
+        board(m + 1 - str2num(x(2:3)),double(x(1))-96) = 1;    
+        row = m + 1 - str2num(x(2:3));
+        column = double(x(1))-96;
     else
         [row, column] = AnnieGo(board);
-        board(row, column) = 2;
+        board(row, column) = 2;        
     end
-
+    
+    
+    
 end

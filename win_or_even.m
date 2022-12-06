@@ -68,8 +68,8 @@ function [O_win, X_win] = win_or_even(board, row, column, m)
                 total_line = total_line - 1;
             end           
             % right slash
-            o_num = length(find(fliplr(diag(board(j : j + 4,i : i + 4))) == 1));
-            x_num = length(find(fliplr(diag(board(j : j + 4, i : i + 4))) == 2));
+            o_num = length(find(diag(fliplr(board(j : j + 4,i : i + 4))) == 1));
+            x_num = length(find(diag(fliplr(board(j : j + 4, i : i + 4))) == 2));
             if o_num == 5
                 O_win = 1;
                 break

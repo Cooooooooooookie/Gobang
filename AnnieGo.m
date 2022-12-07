@@ -15,9 +15,8 @@ function [go_row, go_column] = AnnieGo(board)
     % Mechanical Engineering Dept, Chang Gung University.
     
     %=========================% Parameter %=========================%
-        weight   = 5.0;      % The power of the number of pieces +1.
-%         ox_ratio = 1.05;     % Ratio = O / X.
-        ox_ratio = ox_ratio_deciding(board);
+        weight   = 5.0;                           % The power of the number of pieces +1.
+        ox_ratio = ratio_deciding(board, weight); % Ratio = O / X.
     %===============================================================%
     
     [side_length, ~] = size(board);     % Get the board's size.

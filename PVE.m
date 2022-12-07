@@ -5,7 +5,15 @@ O_win = 0; X_win = 0;
 x_return = ['a', '1', '1'];
 row = 1;
 column = 1;
-for round = 1:m^2
+fprintf('First or Second?\n');
+fs = input('Please enter F or S\n','s');
+if fs == 'F'
+    r = 1;
+else
+    r = 2;
+end
+    
+for round = r:m^2
     
     show_board(board);
     [O_win, X_win] = win_or_even(board, row, column, m);

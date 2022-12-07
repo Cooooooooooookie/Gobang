@@ -12,3 +12,7 @@
 * If there are two kinds of pieces on one line, the score is 0.
 * The score of each point is the sum of the scores of all lines passing through this point.
 * Place pieces at the point with the highest score.
+
+## Second-Edition
+* Caculate black and white pieces separately score on the current board.
+* Judging the situation to determine the ox_weight.

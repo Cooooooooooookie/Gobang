@@ -45,6 +45,7 @@ for round = r:m^2
         column = double(x(1))-96;
     else
         [row, column] = AnnieGo(board);
+        pause(1);
         board(row, column) = 2;        
     end
     

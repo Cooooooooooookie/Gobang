@@ -138,6 +138,7 @@ function ox_ratio = ratio_deciding(board, weight)
         end
     end
 
+    % By compare the score which o & x get by each other, then deciding attack or defense.
     if score_o < score_x
         ox_ratio = 0.95;
     else

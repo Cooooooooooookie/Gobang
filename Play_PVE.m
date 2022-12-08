@@ -27,22 +27,26 @@ for round = r:m^2
     end
     
     if mod(round, 2) == 1
-        x = input('O Round\n','s');
+        o = input('O Round\n','s');
         re = 'return';
         % regret the previous step
-        while strcmp(x,re)
+        while strcmp(o,re)
             board(m + 1 - str2num(x_return(2:3)),double(x_return(1))-96) = 0;
             board(row, column) = 0;
             show_board(board);
-            x = input('O Round\n','s');
+            o = input('O Round\n','s');
         end
-        while str2num(x(2:3)) > m || double(x(1)-96) > m || board(m + 1 -str2num(x(2:3)),double(x(1))-96) == 1 || board(m + 1 -str2num(x(2:3)),double(x(1))-96) == 2
-            x = input('O Round\n','s');
+        x(1) = str2num(o(2:3));
+        x(2) = double(o(1)-96);
+        while x(1) > m || x(2) > m || board(m + 1 - x(1), x(2)) ~=0
+            o = input('O Round\n','s');
         end
+        x(1) = str2num(o(2:3));
+        x(2) = double(o(1)-96);
         x_return = x;
-        board(m + 1 - str2num(x(2:3)),double(x(1))-96) = 1;    
-        row = m + 1 - str2num(x(2:3));
-        column = double(x(1))-96;
+        board(m + 1 - x(1), x(2)) = 1;    
+        row = m + 1 - x(1);
+        column = x(2);
     else
         [row, column] = AnnieGo(board);
         pause(1);

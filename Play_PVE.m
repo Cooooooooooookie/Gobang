@@ -1,6 +1,6 @@
 clear; clc;
 
-m = 10;
+m = 19;
 board = zeros(m);
 O_win = 0; X_win = 0;
 x_return = ['a', '1', '1'];
@@ -17,13 +17,15 @@ end
 for round = r:m^2
     
     show_board(board);
-    [O_win, X_win] = win_or_even(board, row, column, m);
-    if O_win == 1
+    winner = win_or_even(board, row, column);
+    if winner == 1
         fprintf('O win!\n');
         break
-    elseif X_win == 1
+    elseif winner == 2
         fprintf('X win!\n');
         break
+    elseif winner == 3
+        fprintf('Even!');
     end
     
     if mod(round, 2) == 1

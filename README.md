@@ -1,4 +1,4 @@
-# AnnieGo
+![image](https://github.com/Cooooooooooookie/Gobang/blob/main/AnnieGo_logo.png)
 > **Author** : Cooooooooooookie, LarryWu510, annie__m_e.
 >
 > Mechanical Engineering Dept, Chang Gung University.

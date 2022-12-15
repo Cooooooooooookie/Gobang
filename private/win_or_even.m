@@ -21,7 +21,7 @@ function winner = win_or_even(board, row, column)
         j_left = row - 4;
     end
     if m - row < 4
-        j_right = 6;
+        j_right = m - 4;
     else
         j_right = row;
     end    

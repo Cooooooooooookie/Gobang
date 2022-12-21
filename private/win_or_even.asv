@@ -9,7 +9,7 @@ function winner = win_or_even(board, row, column)
     else
         i_left = column - 4;
     end
-    if m - column <= 4
+    if m - column < 4
         i_right = m - 4;
     else
         i_right = column;
@@ -20,15 +20,15 @@ function winner = win_or_even(board, row, column)
     else
         j_left = row - 4;
     end
-    if m - row <= 4
+    if m - row < 4
         j_right = m - 4;
     else
         j_right = row;
     end    
     % row check
     for i = i_left:i_right
-        o_num = length(find(board(row, i : i + 4) == 1));
-        x_num = length(find(board(row, i : i + 4) == 2));
+        o_num = length(find(board(i : i + 4, row) == 1));
+        x_num = length(find(board(i : i + 4, row) == 2));
         if o_num == 5
             winner = 1;
             break
@@ -41,8 +41,8 @@ function winner = win_or_even(board, row, column)
     end    
     % column 
     for j = j_left:j_right
-        o_num = length(find(board(j : j + 4, column) == 1));
-        x_num = length(find(board(j : j + 4, column) == 2));
+        o_num = length(find(board(column, j : j + 4) == 1));
+        x_num = length(find(board(column, j : j + 4) == 2));
         if o_num == 5
             winner = 1;
             break
